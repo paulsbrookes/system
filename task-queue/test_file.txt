@@ -1,0 +1,68 @@
+Task Queue Implementation Examples
+=================================
+
+A task queue is a fundamental data structure in computer science.
+It provides a way to manage and process work items asynchronously.
+
+Key Features:
+- FIFO (First In, First Out) ordering
+- Thread-safe operations for concurrent access
+- Efficient task distribution across worker threads
+
+Use Cases:
+1. Background job processing
+2. Load balancing in web servers
+3. Event-driven architectures
+4. Producer-consumer patterns
+
+The task queue pattern is essential for building scalable systems.
+Multiple producers can submit tasks to the queue concurrently.
+Consumer threads pull tasks from the queue and execute them.
+
+This implementation demonstrates three progressive levels:
+- Simple single-threaded queue
+- Thread-safe multi-threaded queue
+- Complete thread pool with work queue
+
+Each example builds upon the concepts of the previous one.
+The task queue abstraction allows for clean separation of concerns.
+Work items can be queued without blocking the caller.
+
+Performance Considerations:
+- Lock contention in multi-threaded scenarios
+- Queue depth monitoring and backpressure
+- Worker thread pool sizing
+- Task granularity and scheduling
+
+A well-designed task queue system improves application responsiveness.
+It enables better resource utilization and throughput.
+The queue acts as a buffer between task generation and execution.
+
+Common operations include enqueue, dequeue, and queue status checks.
+Thread pools typically maintain a fixed number of worker threads.
+This prevents resource exhaustion from unlimited thread creation.
+
+Testing the task queue with file processing operations:
+- Line counting task
+- Word counting task
+- Pattern matching task
+
+The linked list implementation provides dynamic sizing.
+Memory is allocated and freed as tasks enter and leave the queue.
+This flexibility comes with the overhead of pointer management.
+
+Alternative implementations might use circular buffers or arrays.
+Each approach has different trade-offs in terms of performance and complexity.
+
+Task execution should be independent and side-effect free when possible.
+This makes debugging and testing much easier.
+Error handling is crucial for robust task processing.
+
+The shutdown sequence must be carefully coordinated.
+All pending tasks should complete before threads terminate.
+Resource cleanup prevents memory leaks and handle exhaustion.
+
+Conclusion:
+A task queue is a powerful pattern for concurrent programming.
+It simplifies reasoning about asynchronous work processing.
+Understanding this pattern is valuable for any systems programmer.
